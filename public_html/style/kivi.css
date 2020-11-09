@@ -1,0 +1,605 @@
+/*removing browsers default settings */
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote {
+	margin:0;
+	padding:0;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+/* pop up messages */
+#errorMessages{
+	display:none;
+	position:fixed;
+	width: 70%;
+	height: 30%;
+	left: 15%;
+	top: 20%;
+	z-index: 4;
+	background-color:rgba(220,244,220,1);
+	border:rgba(0,153,102,1) solid;
+	border-width: 1%;
+	font-size: 2.5vw;
+}
+
+#endOfGameScreen{
+	display:none;
+	position:fixed;
+	background-color:rgba(220,244,220,1);
+	border:rgba(0,153,102,1) solid;
+	border-width: 1vmin;
+	border-radius: 10% 10% 10% 10%;
+	width: 80%;
+	height: 80%;
+	font-size: 7vmin;
+	padding-top: 5%;
+	text-align: center;
+	top: 6.5%;
+	left: 10%;
+	z-index: 4;
+}
+
+#endOfGameScreen__close{
+	display:none; 
+	position:fixed;
+	cursor:pointer;
+	user-select: none;
+	padding-top: 2vh;
+	bottom: 12%;
+	left: 34%;
+	width: 30%;
+	height: 14%;
+	text-align: center;
+	font-size: 9vmin;
+	background-color:rgba(220,244,220,1);
+	border:rgba(0,153,102,1) solid;
+	border-width: 0.5vw;
+	border-radius: 10% 10% 10% 10%;
+	z-index: 4;
+}
+
+#p1NameEnd {
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size:7vmin;
+}
+
+#p2NameEnd {
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-size:7vmin;
+}
+
+#p3NameEnd {
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-size:7vmin;
+}
+
+#p4NameEnd {
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-size:7vmin;
+}
+
+span.p1Color {
+	color:#00f;
+}
+span.p2Color{
+	color:#f00;
+}
+span.p3Color{
+	color:#ffda05;
+}
+span.p4Color{
+	color:#0ada0a;
+}
+
+
+#queueMessages{
+	display:none;
+	position:fixed;
+	text-align:center;
+	width: 15%;
+	left: 42%;
+	top: 3%;
+	user-select: none;
+	background-color:rgba(220,244,220,1);
+	padding: 0 0 0 0;
+	border:rgba(0,153,102,1) solid;
+	border-width: 1%;
+	border-radius: 70% 70% 70% 70%;
+	z-index: 3;
+	font-size: 2.5vw;
+}
+
+#cookieConsent{
+	display:none;
+	position:fixed;
+	width: 100%;
+	height: 14%; /* 10% */
+	left: 0;
+	bottom: 0;
+	background-color:rgba(240,254,240,1);
+	z-index: 3;
+}
+	#cookieConsent__hideButton{
+		position:fixed;
+		left: 1%;
+		bottom: 4.5%;
+		width: 25%;
+		height: 5%;
+		user-select: none;
+		cursor:pointer;
+		text-align:center;
+		background-color:rgba(220,244,220,1);
+		border:rgba(0,0,0,1) solid;
+		border-width: 2%;
+		font-size: 30px;
+		font-size: 4vh;
+	}
+	#cookieConsent__text{
+		position:fixed;
+		right: 1%;
+		bottom: 1%;
+		width: 70%;
+		height: 11%;
+		user-select: none;
+		text-align:center;
+		font-size: 30px;
+		font-size: 4vh;
+	}
+
+
+/* pre game setup */
+/* background */
+#preGameChoices {
+	width: 100%;
+	height: 100%;
+	background-color:rgba(204,204,204,1);
+	margin:auto;
+	min-height: 100vh;
+}
+
+/*logo/header */
+#preGameChoices__header{
+	height: 60%;
+	width: 100%;
+	user-select: none;
+	text-align:center;
+	padding-bottom: 4%;
+	font-size:80px;
+	font-size: 15vh;
+}
+
+/*username*/
+#getUsername{
+	width: 100%;
+	margin:auto;
+	display:block;
+	padding-bottom: 6%;
+}
+#getUsername__form{
+	margin:auto;
+	text-align:center;
+	font-size: 30px;
+	font-size: 4vh;
+}
+#getUsername__inputName{
+	font-size:24px;
+	font-size: 4vh;
+}
+
+/*buttons*/
+#playerAmounts{
+	margin:auto;
+	width: 100%;
+	height:auto;	
+	text-align:center;
+}
+.playerAmounts__button{
+	width: 24%;
+	height: 24%;
+	min-height: 15%;
+	margin: 0 0 0 6%;
+	padding: 5% 0 5% 0;
+	border:rgba(0,0,0,1) solid;
+	border-width: 2%;
+	display: inline-block;
+	float: left;
+	user-select: none;
+	cursor:pointer;
+	font-size: 3.5vh;
+}
+
+#gameHistory{
+	float:none;
+	width: 60vw;
+	font-size: 4vw;
+	height: 5vw;
+	border:rgba(0,0,0,1) solid;
+	border-width: 2%;
+	display: inline-block;
+	text-align:center;
+	margin-left: 20vw;
+	margin-top: 5vh;
+	user-select: none;
+	cursor:pointer;
+	text-decoration:none;
+	color: #000;
+}
+
+#rules{
+	float:none;
+	width: 60vw;
+	font-size: 4vw;
+	height: 5vw;
+	border:rgba(0,0,0,1) solid;
+	border-width: 2%;
+	display: inline-block;
+	text-align:center;
+	margin-left: 20vw;
+	margin-top: 1vh;
+	user-select: none;
+	cursor:pointer;
+	text-decoration:none;
+	color: #000;
+}
+
+/* in game setup */
+/*background*/
+#inGame{
+	display: none;
+}
+
+/* players */
+#playersName{
+	width: 100%;
+	height: 4%;
+}
+.playersName__tags{
+	width: 25%;
+	height: 4%;
+	text-align:center;
+	float:left;
+	z-index: 2;
+	user-select: none;
+	font-size: 2vmin;
+}
+	#playersName__player1{
+	}
+		#playersName__player1__name{
+			color:#15f;
+		}
+	#playersName__player2{
+	}
+		#playersName__player2__name{
+			color:#d23;
+		}
+	#playersName__player3{
+	}
+		#playersName__player3__name{
+			color:#dd3;
+		}
+	#playersName__player4{
+	}
+		#playersName__player4__name{
+			color:#4d1;
+		}
+
+/* board*/
+#board{
+	margin:auto;
+	padding: 0 0 0 0;
+	background-color:rgba(0,0,0,1);
+	box-sizing:border-box;
+	position:relative;
+	min-height: 80vh;
+	height: 80vh;
+	max-width: 78vh;
+	width: 100vmin;
+}
+.slot{
+	border:rgba(0,0,0,1) solid;	
+	border-width: 0.25%;
+	margin: 0.25%;
+	display: block;
+	float: left;
+	box-sizing:border-box;
+	background-size:contain;
+	background-repeat:no-repeat;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	height: calc(100vw / 7.29);
+	width: calc(100vw / 7.29);
+	max-height: calc(100vh / 7.29 * 0.78);
+	max-width: calc(100vh / 7.29 * 0.78);
+}
+	#a1-slot{
+		background-image:url(../pictures/kivi/board/a1.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#a2-slot{
+		background-image:url(../pictures/kivi/board/a2.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#a3-slot{
+		background-image:url(../pictures/kivi/board/a3.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#a4-slot{
+		background-image:url(../pictures/kivi/board/a4.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#a5-slot{
+		background-image:url(../pictures/kivi/board/a5.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#a6-slot{
+		background-image:url(../pictures/kivi/board/a6.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#a7-slot{
+		background-image:url(../pictures/kivi/board/a7.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#b1-slot{
+		background-image:url(../pictures/kivi/board/b1.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#b2-slot{
+		background-image:url(../pictures/kivi/board/b2.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#b3-slot{
+		background-image:url(../pictures/kivi/board/b3.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#b4-slot{
+		background-image:url(../pictures/kivi/board/b4.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#b5-slot{
+		background-image:url(../pictures/kivi/board/b5.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#b6-slot{
+		background-image:url(../pictures/kivi/board/b6.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#b7-slot{
+		background-image:url(../pictures/kivi/board/b7.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#c1-slot{
+		background-image:url(../pictures/kivi/board/c1.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#c2-slot{
+		background-image:url(../pictures/kivi/board/c2.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#c3-slot{
+		background-image:url(../pictures/kivi/board/c3.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#c4-slot{
+		background-image:url(../pictures/kivi/board/c4.svg);
+		background-color:rgba(50,50,50,1);
+		}
+	#c5-slot{
+		background-image:url(../pictures/kivi/board/c5.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#c6-slot{
+		background-image:url(../pictures/kivi/board/c6.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#c7-slot{
+		background-image:url(../pictures/kivi/board/c7.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#d1-slot{
+		background-image:url(../pictures/kivi/board/d1.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#d2-slot{
+		background-image:url(../pictures/kivi/board/d2.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#d3-slot{
+		background-image:url(../pictures/kivi/board/d3.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#d4-slot{
+		background-image:url(../pictures/kivi/board/d4.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#d5-slot{
+		background-image:url(../pictures/kivi/board/d5.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#d6-slot{
+		background-image:url(../pictures/kivi/board/d6.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#d7-slot{
+		background-image:url(../pictures/kivi/board/d7.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#e1-slot{
+		background-image:url(../pictures/kivi/board/e1.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#e2-slot{
+		background-image:url(../pictures/kivi/board/e2.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#e3-slot{
+		background-image:url(../pictures/kivi/board/e3.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#e4-slot{
+		background-image:url(../pictures/kivi/board/e4.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#e5-slot{
+		background-image:url(../pictures/kivi/board/e5.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#e6-slot{
+		background-image:url(../pictures/kivi/board/e6.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#e7-slot{
+		background-image:url(../pictures/kivi/board/e7.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#f1-slot{
+		background-image:url(../pictures/kivi/board/f1.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#f2-slot{
+		background-image:url(../pictures/kivi/board/f2.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#f3-slot{
+		background-image:url(../pictures/kivi/board/f3.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#f4-slot{
+		background-image:url(../pictures/kivi/board/f4.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#f5-slot{
+		background-image:url(../pictures/kivi/board/f5.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#f6-slot{
+		background-image:url(../pictures/kivi/board/f6.svg);
+		background-color:rgba(255,51,153,1);
+	}
+	#f7-slot{
+		background-image:url(../pictures/kivi/board/f7.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#g1-slot{
+		background-image:url(../pictures/kivi/board/g1.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#g2-slot{
+		background-image:url(../pictures/kivi/board/g2.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#g3-slot{
+		background-image:url(../pictures/kivi/board/g3.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#g4-slot{
+		background-image:url(../pictures/kivi/board/g4.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	#g5-slot{
+		background-image:url(../pictures/kivi/board/g5.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#g6-slot{
+		background-image:url(../pictures/kivi/board/g6.svg);
+		background-color:rgba(50,50,50,1);
+	}
+	#g7-slot{
+		background-image:url(../pictures/kivi/board/g7.svg);
+		background-color:rgba(225,225,225,1);
+	}
+	
+/* your hand*/
+#yourHand{
+	width:100%;
+	height:20%;
+	bottom: 0;
+	background-color:rgba(15,151,46,1); 
+	position:fixed;
+}
+	
+#yourHand__confirmButton{
+	position:fixed;
+	width:22vh;
+	height:8vh;
+	box-sizing:border-box;
+	bottom: 0.5vh;
+	left: 0.5vh;
+	border:rgba(0,0,0,1) solid;	
+	border-width: 0.25%;
+	background-color:rgba(166,23,255,1);
+	font-size:50px;
+	text-align:center;
+	margin:auto;
+	cursor:pointer;
+	font-size: 5.5vh;
+}	
+
+#yourHand__marbles{
+	width:23vh;
+	height:10%;
+	bottom: 8.5vh;
+	left: 0;
+	position:fixed;
+}
+.yourHand__marbles__aMarble{
+	width:4.5vh;
+	height:4.5vh;
+	position:relative;
+	float:left;
+	background-image:url(../pictures/kivi/marbles/blueMarble.svg);
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+
+/*dices */	
+#yourHand__dices{
+	width: 40%;
+	height: 20%;
+	bottom: 0;
+	right: 0;
+	position:fixed;	
+}
+.yourHand__dices_AtHand{
+	width: 8vh;
+	height: 8vh;
+	border:rgba(255,250,240,1) solid;	
+	border-width: 0.2vmin;
+	border-radius: 10%;
+	background-color:#FFE;
+	float:right;
+	position:fixed;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+	#yourHand__dices_AtHand_dice1{
+		right:1vh;
+		bottom:1vh;
+	}
+	#yourHand__dices_AtHand_dice2{
+		right:11vh;
+		bottom:1vh;
+	}
+	#yourHand__dices_AtHand_dice3{
+		right:21vh;
+		bottom:1vh;
+	}
+	#yourHand__dices_AtHand_dice4{
+		right:1vh;
+		bottom:11vh;
+	}
+	#yourHand__dices_AtHand_dice5{
+		right:11vh;
+		bottom:11vh;
+	}
+	#yourHand__dices_AtHand_dice6{
+		right:21vh;
+		bottom:11vh;
+	}
+	
+
+
+

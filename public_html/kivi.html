@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style/kivi.css"/>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="script/kivi.js"></script>
+	<title>Kivi</title>
+	<link rel="shortcut icon" href="pictures/favicon/kivi.png" />
+</head>
+<body>
+	<div id="queueMessages">In queue</div>
+	<div id="errorMessages"></div>
+	<div id="endOfGameScreen">
+		<div id="p1NameEnd"></div>
+		<div id="p2NameEnd"></div>
+		<div id="p3NameEnd"></div>
+		<div id="p4NameEnd"></div>
+	</div>
+	<div id="endOfGameScreen__close">Close</div>
+	<div id="cookieConsent">
+		<div id="cookieConsent__hideButton">OK</div>
+		<div id="cookieConsent__text">This website uses<br> cookies to work</div>
+	</div>
+	<div id="preGameChoices">
+		<div id="preGameChoices__header">Kivi</div>
+		<div id="getUsername">
+			<form id="getUsername__form">
+				<label>Username</label><br>
+				<input type="text" id="getUsername__inputName" name="getUsername__labelName" placeholder="quest">
+			</form>
+		</div>
+		<div id="playerAmounts">
+			<div class="playerAmounts__button" id="playerAmounts__2PlayersButton">2 players<br>game</div>
+			<div class="playerAmounts__button" id="playerAmounts__3PlayersButto">3 players<br>game</div>
+			<div class="playerAmounts__button" id="playerAmounts__4PlayersButton">4 players<br>game</div>
+		</div>
+		<a href="http://rmbrawl.net/gameHistory.php" target="_blank"><div id="gameHistory">Game History</div></a>
+		<a href="downloads/kivi/rules.pdf" target="_blank"><div id="rules">Rules</div></a>
+	</div>
+	<div id="inGame">
+		<div id="board">
+			<div id="playersNames">
+				<div id="playersName__player1" class="playersName__tags">
+					<span id="playersName__player1__name">p1</span>
+				</div>
+				<div id="playersName__player2" class="playersName__tags">
+					<span id="playersName__player2__name">p2</span>
+				</div>
+				<div id="playersName__player3" class="playersName__tags">
+					<span id="playersName__player3__name">p3</span>
+				</div>
+				<div id="playersName__player4" class="playersName__tags">
+					<span id="playersName__player4__name">p4</span>
+				</div>
+			</div>
+			<div id="a1-slot" class="slot"></div>
+			<div id="a2-slot" class="slot"></div>
+			<div id="a3-slot" class="slot"></div>
+			<div id="a4-slot" class="slot"></div>
+			<div id="a5-slot" class="slot"></div>
+			<div id="a6-slot" class="slot"></div>
+			<div id="a7-slot" class="slot"></div>
+			
+			<div id="b1-slot" class="slot"></div>
+			<div id="b2-slot" class="slot"></div>
+			<div id="b3-slot" class="slot"></div>
+			<div id="b4-slot" class="slot"></div>
+			<div id="b5-slot" class="slot"></div>
+			<div id="b6-slot" class="slot"></div>
+			<div id="b7-slot" class="slot"></div>
+			
+			<div id="c1-slot" class="slot"></div>
+			<div id="c2-slot" class="slot"></div>
+			<div id="c3-slot" class="slot"></div>
+			<div id="c4-slot" class="slot"></div>
+			<div id="c5-slot" class="slot"></div>
+			<div id="c6-slot" class="slot"></div>
+			<div id="c7-slot" class="slot"></div>
+			
+			<div id="d1-slot" class="slot"></div>
+			<div id="d2-slot" class="slot"></div>
+			<div id="d3-slot" class="slot"></div>
+			<div id="d4-slot" class="slot"></div>
+			<div id="d5-slot" class="slot"></div>
+			<div id="d6-slot" class="slot"></div>
+			<div id="d7-slot" class="slot"></div>
+			
+			<div id="e1-slot" class="slot"></div>
+			<div id="e2-slot" class="slot"></div>
+			<div id="e3-slot" class="slot"></div>
+			<div id="e4-slot" class="slot"></div>
+			<div id="e5-slot" class="slot"></div>
+			<div id="e6-slot" class="slot"></div>
+			<div id="e7-slot" class="slot"></div>
+			
+			<div id="f1-slot" class="slot"></div>
+			<div id="f2-slot" class="slot"></div>
+			<div id="f3-slot" class="slot"></div>
+			<div id="f4-slot" class="slot"></div>
+			<div id="f5-slot" class="slot"></div>
+			<div id="f6-slot" class="slot"></div>
+			<div id="f7-slot" class="slot"></div>
+			
+			<div id="g1-slot" class="slot"></div>
+			<div id="g2-slot" class="slot"></div>
+			<div id="g3-slot" class="slot"></div>
+			<div id="g4-slot" class="slot"></div>
+			<div id="g5-slot" class="slot"></div>
+			<div id="g6-slot" class="slot"></div>
+			<div id="g7-slot" class="slot"></div>
+		</div>
+		<div id="yourHand">
+			<div id="yourHand__confirmButton">Confirm</div>
+			<div id="yourHand__marbles">
+				<div id="yourHand__marbles__marble1" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble2" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble3" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble4" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble5" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble6" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble7" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble8" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble9" class="yourHand__marbles__aMarble"></div>
+				<div id="yourHand__marbles__marble10" class="yourHand__marbles__aMarble"></div>
+			</div>
+			<div id="yourHand__dices">
+				<div id="yourHand__dices_AtHand_dice1" class="yourHand__dices_AtHand"></div>
+				<div id="yourHand__dices_AtHand_dice2" class="yourHand__dices_AtHand"></div>
+				<div id="yourHand__dices_AtHand_dice3" class="yourHand__dices_AtHand"></div>
+				<div id="yourHand__dices_AtHand_dice4" class="yourHand__dices_AtHand"></div>
+				<div id="yourHand__dices_AtHand_dice5" class="yourHand__dices_AtHand"></div>
+				<div id="yourHand__dices_AtHand_dice6" class="yourHand__dices_AtHand"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+

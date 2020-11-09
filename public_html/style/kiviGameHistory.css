@@ -1,0 +1,349 @@
+/*removing browsers default settings */
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote {
+	margin:0;
+	padding:0;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+
+/* player colours */
+span.p1Color {
+	color:#00f;
+}
+span.p2Color{
+	color:#f00;
+}
+span.p3Color{
+	color:#ffda05;
+}
+span.p4Color{
+	color:#0ada0a;
+}
+
+
+/* cookies */
+#cookieConsent{
+	display:none;
+	position:fixed;
+	width: 100%;
+	height: 14%; /* 10% */
+	left: 0;
+	bottom: 0;
+	background-color:rgba(240,254,240,1);
+	z-index: 3;
+}
+	#cookieConsent__hideButton{
+		position:fixed;
+		left: 1%;
+		bottom: 4.5%;
+		width: 25%;
+		height: 5%;
+		user-select: none;
+		cursor:pointer;
+		text-align:center;
+		background-color:rgba(220,244,220,1);
+		border:rgba(0,0,0,1) solid;
+		border-width: 2%;
+		font-size: 4vh;
+	}
+	#cookieConsent__text{
+		position:fixed;
+		right: 1%;
+		bottom: 1%;
+		width: 70%;
+		height: 11%;
+		user-select: none;
+		text-align:center;
+		font-size: 4vh;
+	}
+
+
+/*input format */
+#mainMenu--Button{
+	cursor: pointer;
+	float: left;
+	font-size: 2vw;
+	width: 6.6vw;
+	margin-right: 18.5vw;
+	margin-left: 4vw;
+	margin-top: 1vw;
+	padding: 0.6vw;
+	border-width: 0.2vw;
+    border-style:solid;
+    border-color: #666;
+	border-radius: 1.6vw;
+	text-align:center;
+	user-select: none;
+	text-decoration:none;
+}
+
+gameHistory__header{
+	float:left;
+}
+
+h1{
+	font-size: 6vw;
+	user-select: none;
+}
+
+
+/*font size */
+legend, label, option, input, select{
+	font-size: 1.8vw;
+}
+
+
+/*locations*/
+
+fieldset{
+	margin: 1vw;
+	padding: 1vw;
+	box-sizing:border-box;
+}
+
+legend{
+	margin: auto;
+}
+
+label{
+	margin-left: 3vw;
+}
+value{
+}
+
+select{
+}
+
+option{
+}
+
+input{
+}
+
+/* remove browser defalut valus */
+fieldset {
+    display: block;
+    margin-inline-start: 0.5vw;
+    margin-inline-end:  0.5vw;
+    padding-block-start:  0.5vw;
+    padding-inline-start:  0.5vw;
+    padding-inline-end:  0.5vw;
+    padding-block-end:  0.5vw;
+    min-inline-size: min-content;
+    border-width: 0.2vw;
+    border-style:solid;
+    border-color: #777;
+    border-image: none;
+}
+
+legend {
+    display: block;
+    padding-inline-start: 0.5vw;
+    padding-inline-end: 0.5vw;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+select {
+    border-width: 0.15vw;
+}
+
+option {
+    min-height: 0.1vh;
+    padding: 0px 0.1vw 0.1vw;
+}
+
+input[type="submit" i] {
+    padding: 0.1vh  0.4vh;
+    border-width: 0.1vh ;
+}
+
+label for{
+	padding-left: 4vw;
+}
+
+#firstLabel{
+	margin-left: calc(7.9vw - 27px);
+}
+
+
+/* pages shown */
+.pages{
+	width: 94vw;
+	margin: auto;
+	height: 3vw;
+}
+
+/* font sizes */
+.pages__gamesTotal, .pages__gamesTotal__text, .pages__gamesTotal__shownGamesNumbers, .pages__pagesTotal, .pages__pagesTotal--leftMostPage, .pages__pagesTotal--oneToLeft, .pages__pagesTotal__availablePageNumber, .pages__pagesTotal__availablePageNumber__firstNumber, .pages__pagesTotal__availablePageNumber__secondNumber, .pages__pagesTotal__availablePageNumber__thirdNumber, .pages__pagesTotal--oneToRight, .pages__pagesTotal--rightMostPage{
+	font-size: 1.9vw;
+	font-weight:bold;
+}
+
+/*sizes and posotions */
+a{
+	text-decoration: none;
+}
+
+.pages__gamesTotal{
+	float:left;
+}
+.pages__gamesTotal__text{
+	float:left;
+	font-weight: 200;
+}
+.pages__gamesTotal__shownGamesNumbers{
+	float:left;
+	font-weight: 200;
+}
+
+.pages__pagesTotal{
+	float: right;
+	width: 18vw;
+	color:#d6d;
+	margin:auto;
+}
+.pages__pagesTotal--leftMostPage{
+	cursor:pointer;
+	float:left;
+	letter-spacing: -0.5vw;
+}
+.pages__pagesTotal--oneToLeft{
+	cursor:pointer;
+	float:left;
+	padding-left: 0.75vw;
+}
+.pages__pagesTotal__availablePageNumber{
+	float:left;
+}
+.pages__pagesTotal__availablePageNumber__firstNumber{
+	cursor:pointer;
+	float:left;
+	padding-left: 1vw;
+}
+.pages__pagesTotal__availablePageNumber__secondNumber{
+	cursor:pointer;
+	float:left;
+	padding-left: 0.4vw;
+}
+.pages__pagesTotal__availablePageNumber__thirdNumber{
+	cursor:pointer;
+	float:left;
+	padding-left: 0.4vw;
+}
+.pages__pagesTotal__availablePageNumber__fourthNumber{
+	cursor:pointer;
+	float:left;
+	padding-left: 0.4vw;
+}
+.pages__pagesTotal__availablePageNumber__fifthNumber{
+	cursor:pointer;
+	float:left;
+	padding-left: 0.4vw;
+}
+.pages__pagesTotal--oneToRight{
+	cursor:pointer;
+	float:left;
+	padding-left: 1vw;
+}
+.pages__pagesTotal--rightMostPage{
+	cursor:pointer;
+	float:left;
+	letter-spacing: -0.5vw;
+	padding-left: 0.75vw;
+}
+
+.pages__previous{
+	float:left;
+	cursor:pointer;
+	margin-left: 1vw;
+	font-size: 2.2vw;
+	padding-top: 0.5vw;
+	padding-left: 0.6vw;
+	padding-right: 0.6vw;
+	height: 3.2vw;
+	border-width: 0.2vw;
+    border-style:solid;
+    border-color: #666;
+	border-radius: 1.6vw;
+	width: 9vw;
+	text-align:center;
+	color:#929;
+	user-select: none;
+}
+.pages__next{
+	float:right;
+	cursor:pointer;
+	margin-right: 1vw;
+	font-size: 2.2vw;
+	padding-top: 0.5vw;
+	padding-left: 0.6vw;
+	padding-right: 0.6vw;
+	height: 3.2vw;
+	border-width: 0.2vw;
+    border-style:solid;
+    border-color: #666;
+	border-radius: 1.6vw;
+	width: 9vw;
+	text-align:center;
+	color:#929;
+	user-select: none;
+}
+
+
+/* games */
+.shownGames__game{
+	width: 96vw;
+	height: 8.7vw;
+	margin: 1vw;
+	border:0.25vw rgba(51,51,51,1) solid;
+	cursor: pointer;
+}
+
+.shownGames__game__time{
+	width: 40vw;
+	float:none;
+	margin:auto;
+	text-align:center;
+	font-size: 1.6vw;
+	padding-top: 0.4vw;
+	padding-bottom: 0.15vw;
+}
+
+
+.shownGames__game__nameAndScore{
+	height: 7vw;
+	float:left;
+	width: 96vw;
+}
+
+.shownGames__game__nameAndScore__p1, .shownGames__game__nameAndScore__p2, .shownGames__game__nameAndScore__p3, .shownGames__game__nameAndScore__p4{
+	float:left;
+	height: 3.5vmin;
+	font-size: 3vmin;
+	width: 24vw;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size:contain;
+}
+.shownGames__game__nameAndScore__p1__Name, .shownGames__game__nameAndScore__p2__Name, .shownGames__game__nameAndScore__p3__Name, .shownGames__game__nameAndScore__p4__Name {
+	float:left;
+	height: 2.5vw;
+	text-align:right;
+	width: 15vw;
+	margin-right: 0.4vw;
+	margin-left: 4vw;
+	width: auto;
+}
+
+.shownGames__game__nameAndScore__p1__Score, .shownGames__game__nameAndScore__p2__Score, .shownGames__game__nameAndScore__p3__Score, .shownGames__game__nameAndScore__p4__Score {
+	float:left;
+	width: 5vw;
+	text-align:center;
+}
+
+
+
+
