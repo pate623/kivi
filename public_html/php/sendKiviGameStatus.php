@@ -6,7 +6,7 @@ header('Cache-Control: no-cache');
 $servername = "localhost";
 $username = "username";
 $password = "password";
-$dbname = "dbname"; //kivi and kiviRunningGames table
+$dbname = "draftPickResults"; //kivi and kiviRunningGames table
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

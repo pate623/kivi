@@ -292,8 +292,13 @@ function getPageInfo(){
 	
 	for(var i = 0; i < data["numOfShowingGames"] ; i++){
 		
+		//Add relative link fronm this script to the kiviPreviewGame.php file
+		var relativeKiviPreviewLink = window.location.href + "kiviPreviewGame.php?ID=";
+		relativeKiviPreviewLink = relativeKiviPreviewLink.replace("gameHistory", "kiviPreviewGame");
+		// '<a href="http://rmbrawl.net/kiviPreviewGame.php?ID='
+		
 		var toBeappended = "";
-		toBeappended += '<a href="http://rmbrawl.net/kiviPreviewGame.php?ID=';
+		toBeappended += relativeKiviPreviewLink;
 		toBeappended += String(data["game"][i]["ID"]); //link to the game	<<< !! still testing !! >>>
 		toBeappended += '" target="_blank">';
 		toBeappended += '<div class="shownGames__game">';
@@ -491,7 +496,12 @@ function redirectWithGet(){
 	//use get header data to determine what the whole adress should be 
 	//getHeaderData
 	var headerInfo ="gamesShown=" + getHeaderData.gamesShown + "&orderedBy=" + getHeaderData.orderedBy + "&pAmount=" + getHeaderData.pAmount + "&page=" + getHeaderData.page;
-	window.location.href = "http://rmbrawl.net/gameHistory.php?" + headerInfo;
+	
+	//Prevent header info stacking
+	var cleanedHeader = window.location.href;
+	cleanedHeader =  cleanedHeader.substr(0, cleanedHeader.indexOf("?"));
+	
+	window.location.href = cleanedHeader + headerInfo;
 }
 
 

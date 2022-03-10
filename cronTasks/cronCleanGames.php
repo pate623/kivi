@@ -9,7 +9,7 @@
 $servername = "localhost";
 $username = "username";
 $password = "password";
-$dbname = "dbname"; //kiviRunningGames
+$dbname = "draftPickResults"; //kiviRunningGames
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

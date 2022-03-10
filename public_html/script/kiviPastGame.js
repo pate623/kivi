@@ -48,19 +48,19 @@ $(document).ready(function(){
 	
 		var p1Medal ="";
 		if(severGameInfo.winner == 1){
-			p1Medal =' style="background-image: url(http://rmbrawl.net/pictures/kivi/medal/medal.png)"';
+			p1Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
 		}
 		var p2Medal ="";
 		if(severGameInfo.winner == 2){
-			p2Medal =' style="background-image: url(http://rmbrawl.net/pictures/kivi/medal/medal.png)"';
+			p2Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
 		}
 		var p3Medal ="";
 		if(severGameInfo.winner == 3){
-			p3Medal =' style="background-image: url(http://rmbrawl.net/pictures/kivi/medal/medal.png)"';
+			p3Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
 		}
 		var p4Medal ="";
 		if(severGameInfo.winner == 4){
-			p4Medal =' style="background-image: url(http://rmbrawl.net/pictures/kivi/medal/medal.png)"';
+			p4Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
 		}
 		
 		$("#postGameInfo").html("")

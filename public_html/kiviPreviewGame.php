@@ -12,7 +12,7 @@
 			$servername = "localhost";
 			$username = "username";
 			$password = "password";
-			$dbname = "dbname"; //kiviFinishedCorrectly as table
+			$dbname = "draftPickResults"; //kiviFinishedCorrectly as table
 			
 			$conn = mysqli_connect($servername, $username, $password, $dbname);
 			
@@ -121,7 +121,7 @@
 			<th id="boldTable">Connection Score</th>
 		</tr>
 		<tr>
-			<th style="background-image: url(http://rmbrawl.net/pictures/kivi/medal/medal.png)"><span class="p1Color"> pate ff</span></th>
+			<th style="background-image: url(pictures/kivi/medal/medal.png)"><span class="p1Color"> pate ff</span></th>
 			<th><span class="p1Color">2</span></th>
 			<th><span class="p1Color">1</span></th>
 		</tr>

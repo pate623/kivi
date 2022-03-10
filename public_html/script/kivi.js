@@ -219,7 +219,7 @@ function checkQueue(){
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: 'http://rmbrawl.net/php/inQueueKivi.php',
+		url: '../php/inQueueKivi.php',
 		data: queueCheck,
 		dataType: 'json',
 		success: function(data){
@@ -264,7 +264,7 @@ function enteringGame(){
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: 'http://rmbrawl.net/php/inGameKivi.php',
+		url: '../php/inGameKivi.php',
 		data: startGame,
 		dataType: 'json',
 		success: function(data){
@@ -331,7 +331,7 @@ function sendYourChoice(){ //called from confrim button, used to send your choic
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: 'http://rmbrawl.net/php/gameActions.php',
+		url: '../php/gameActions.php',
 		data: yourChoiceOfAction,
 		dataType: 'json',
 		success: function(data){

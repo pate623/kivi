@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 $servername = "localhost";
 $username = "username";
 $password = "password";
-$dbname = "dbname"; //civPick as table
+$dbname = "draftPickResults"; //civPick as table
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 $servername = "localhost";
 $username = "username";
 $password = "password";
-$dbname = "dbname"; //kiviQueue as table
+$dbname = "draftPickResults"; //kiviQueue as table
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
