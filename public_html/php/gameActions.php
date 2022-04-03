@@ -2,12 +2,12 @@
 header('Content-Type: application/json');
 
 /*
- The turnAlls (1-10) will cointain following inforamtion
- the dice inforamtion are in 6 packs. it will only contain outcomes 
+ The turnAlls (1-10) will contain following information
+ the dice information are in 6 packs. it will only contain outcomes 
  one players dices will take 18 characters.
  
- After the 18 dice throws will be the marble palcement
-  it will take two character places regardless of placment (00 for no palce, 01-49 for palced ones )
+ After the 18 dice throws will be the marble placement
+  it will take two character places regardless of placement (00 for no place, 01-49 for placed ones)
   
  Total characters for one player run is 20
   player runs are oin total 4*10= 40
@@ -18,7 +18,7 @@ header('Content-Type: application/json');
   if there is fewer than 4 players then the counter will be automatically increased.
   at the end of each round the counter is increased by 4*4 = 16
   
-  To fiqure out which player turn it is and what to do the moduls need to be counterd
+  To figure out which player turn it is and what to do the modules need to be countered
   if 16% gives out 1 it mens that the tun is ony just starting.
   turn 17 means player 1 first turn because 17/16 has a modulus of 1
     modulus of 1 is p1 first throw
@@ -48,7 +48,7 @@ foreach( $dirtyText as $key => $value ) {
 }
 
 
-//update players game status in here rather tahn spamming the server unnecesary
+//update players game status in here rather than spamming the server unnecessary
 $checkForMatch = strval("SELECT * FROM kiviRunningGames WHERE gameID=" . $userSettings["ID"] );
 $lookMatches = mysqli_query($conn, $checkForMatch);
 if (mysqli_num_rows($lookMatches) == 1) { //if user is found the game
@@ -87,9 +87,9 @@ if(mysqli_num_rows($verified) > 0){
 	$aResult["dice5Reroll"] = substr($aResult["fta"], -2, 1);
 	$aResult["dice6Reroll"] = substr($aResult["fta"], -1, 1);
 	
-	//chech the game turn to define which actions need to be taken 
+	//check the game turn to define which actions need to be taken 
 	//use modulus (%) to  figure out the turn.
-	//use a moduls of 16.
+	//use a modulus of 16.
 	if($curentGame["gameTurn"] == 1){ //if it's the first turn action
 		$dicesThrown = diceThrow(); //returns an array
 		$aResult["dice1"]= $dicesThrown[0];
@@ -99,7 +99,7 @@ if(mysqli_num_rows($verified) > 0){
 		$aResult["dice5"]= $dicesThrown[4];
 		$aResult["dice6"]= $dicesThrown[5];
 		//create the sql insertion string.
-		//chech to see whics turnAll is needed.
+		//check to see which turnAll is needed.
 		//take the one that is needed and add to it the last (this case 6) characters.
 		$updateTurn = $curentGame["firstTurnAll"] . $aResult["dice1"] . $aResult["dice2"] . $aResult["dice3"] . $aResult["dice4"] . $aResult["dice5"] . $aResult["dice6"];
 		$sqlupdate .= "UPDATE kivi SET firstTurnAll= '" . $updateTurn . "' WHERE gameID=" . $userSettings["ID"] . ";";
@@ -337,7 +337,7 @@ function diceThrow() {
 
 //reroll  takes two parameter, the dices and which ones will be re thrown
 // returns 6 random numbers between 1-6
-// All rerolled numbrs will be changed
+// All rerolled numbers will be changed
 //returns all 6 dices, do not check the valid numbers after this function
 function diceReThrow() {
 	$dices = array("3", "3", "3", "3", "3", "3");
@@ -428,14 +428,14 @@ function diceReThrow() {
 	return $dices;
 }
 
-//<< doing borad check takes too much resources delaying the game too much. Trusting the client is good enough >>
+//<< doing board check takes too much resources delaying the game too much. Trusting the client is good enough >>
 //check all 49 board slots to see if any is a match
 //gets 6 dice numbers as a parameters
 //returns 49 true/false statements for each board slot
 
 //uses boardState and boardUsedPositions to see all available slots
 /*
- first one is to check if the boardUsedPositions holds flase (not used) value for the current board slot.
+ first one is to check if the boardUsedPositions holds false (not used) value for the current board slot.
   If it does then check to see if dice number allows the usage. 
    If they do return true
    All other cases return false
@@ -444,7 +444,7 @@ function diceReThrow() {
 
 
 
-//update the databese with the stats
+//update the database with the stats
 /*
  gets all the sql changes that will be made
   removes the last character (;) from that string
@@ -459,7 +459,7 @@ if($aResult['errors'] == false){
 	}
 }
 
-//send info to the user, this info gives them a succes/fileure statment given the user a chance to re upload their data if something went wrong
+//send info to the user, this info gives them a success/failure statement given the user a chance to re upload their data if something went wrong
 $aResult2 = array();
  $aResult2["errors"] = $aResult["errors"];
 echo json_encode($aResult2, JSON_FORCE_OBJECT);

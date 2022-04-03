@@ -18,7 +18,7 @@ foreach( $dirtyText as $key => $value ) {
 	$userSettings[$key] = filter_var( $value, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 }
 
-//decrease the requrment for game stop by 1
+//decrease the requirement for game stop by 1
 $refreshTimer = "UPDATE kiviRunningGames SET finished= finished +1 WHERE gameID=" . $userSettings["ID"];
 if(mysqli_query($conn, $refreshTimer)){ //inc finished by 1
 	$aResult['errors'] = false;

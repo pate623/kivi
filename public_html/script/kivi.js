@@ -39,14 +39,14 @@ function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-//String replacment
+//String replacement
 function replaceAt(string, index, replace) {
 	return string.substring(0, index) + replace + string.substring(index + 1);
 }
 
 
 //cookie consent
-//check if shwoing cookie consent is neccesary
+//check if showing cookie consent is necessary
 $(document).ready(function(){
 	if (typeof(Storage) !== "undefined") {
 		if(localStorage.getItem("consentedToCookies") == "accepted"){
@@ -93,7 +93,7 @@ $(document).ready(function(){
 });
 
 //username
-// Ckeck if username already exist
+// Check if username already exist
 $(document).ready(function(){
 	if (typeof(Storage) !== "undefined") {
 		console.log("looking for a saved user name")
@@ -130,7 +130,7 @@ $.fn.gameStart = function() {
 	$("#preGameChoices").css({"display": "none" });
 	$("#inGame").css({"display": "inline" });
 	$("#queueMessages").css({"display": "block" });
-	//show the right amoutn of palyer at the to pof the screen 
+	//show the right amount of player at the to pof the screen 
 	if(playerCount == 2){
 		$("#playersName__player3").css({"display": "none" });
 		$("#playersName__player4").css({"display": "none" });
@@ -174,7 +174,7 @@ function queues(){
 		dataType: 'json',
 		success: function (aResult) { 
 			if(aResult.errors == false){
-				console.log("succesfully entered into queue")
+				console.log("successfully entered into queue")
 				console.log("your queue id is " + aResult.queueID)
 				localStorage.setItem("queueID",aResult.queueID);
 				console.log("Your queue info json: " + aResult.queueCheck)
@@ -182,7 +182,7 @@ function queues(){
 			}else{
 				console.log("error in queuing")
 				$("#errorMessages").css({"display": "block" });
-				$("#errorMessages").html("Error in queuing<br>Please relaod page");
+				$("#errorMessages").html("Error in queuing<br>Please reload page");
 			}
 			//show all results/errors
 			console.log("--error header-- : --error message--")
@@ -207,7 +207,7 @@ function queues(){
 	});
 };
 
-// wating in the queue 
+// waiting in the queue 
 // send request once a second to see if you have gotten into a game
 // uses queueID and password to check and confirm the queue
 function checkQueue(){
@@ -244,7 +244,7 @@ function checkQueue(){
 			}else{
 				console.log("Error while in queue")	
 				$("#errorMessages").css({"display": "block" });
-				$("#errorMessages").html("Error in queuing<br>Please relaod page");
+				$("#errorMessages").html("Error in queuing<br>Please reload page");
 			}
 		}
 	});
@@ -268,7 +268,7 @@ function enteringGame(){
 		data: startGame,
 		dataType: 'json',
 		success: function(data){
-			//if succesfully got information
+			//if successfully got information
 			if(data.verification == "success"){
 				$("#queueMessages").css({"display": "none" });
 				$("#playersName__player1__name").html(data.p1Name);
@@ -295,12 +295,12 @@ function enteringGame(){
 					$(".yourHand__marbles__aMarble").css("background-image",  "url(../pictures/kivi/marbles/greenMarble.svg)")	
 				}
 				
-				//start the game after succesfull connection and refrsh your activity once in a 5 seconds
+				//start the game after successfully connection and refresh your activity once in a 5 seconds
 				localStorage.setItem("gameTurn", 1);
 				playerColorBackground(1)
 				runningGameEvents()
 			}
-				//get all names from p1 to p4 dependig on game type and show the names in top of the screen
+				//get all names from p1 to p4 depending on game type and show the names in top of the screen
 				//remove queue message
 			//if failed to get the game info
 				//show error message saying game not found
@@ -322,7 +322,7 @@ function enteringGame(){
 
 
 // <<game acions>>
-function sendYourChoice(){ //called from confrim button, used to send your choices into the server
+function sendYourChoice(){ //called from confirm button, used to send your choices into the server
 	//uses web storage to figure out the choice user has made
 	var jsonObject = {data: localStorage.getItem("yourCurrentChoice"), ID: localStorage.getItem("gameID"), user:localStorage.getItem("gamePlayerNumber"), password:localStorage.getItem("kiviPassword")}
 	var yourChoiceOfAction = JSON.stringify(jsonObject);
@@ -343,7 +343,7 @@ function sendYourChoice(){ //called from confrim button, used to send your choic
 			//console.log("server sqhInsert: " + data.sqhInsert) 
 			//console.log("server dicesInfunc: " + data.dicesInfunc) 
 			if(data.errors == false){
-				console.log("Turn played succesfully")
+				console.log("Turn played successfully")
 				//console.log("last actions: " + data.fta)
 				//console.log("inRerollDices: " + data.dice1Reroll + data.dice2Reroll + data.dice3Reroll + data.dice4Reroll + data.dice5Reroll + data.dice6Reroll)
 			}else{
@@ -353,7 +353,7 @@ function sendYourChoice(){ //called from confrim button, used to send your choic
 	});
 }
 
-function closingGameConfirmation(){ //called from confrim button, used to send your choices into the server
+function closingGameConfirmation(){ //called from confirm button, used to send your choices into the server
 	//uses web storage to figure out the choice user has made
 	var jsonObject = {ID: localStorage.getItem("gameID")}
 	var yourChoiceOfAction = JSON.stringify(jsonObject);
@@ -361,7 +361,7 @@ function closingGameConfirmation(){ //called from confrim button, used to send y
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: 'http://rmbrawl.net/php/reportFinished.php',
+		url: '../php/reportFinished.php',
 		data: yourChoiceOfAction,
 		dataType: 'json',
 		success: function(data){
@@ -375,10 +375,10 @@ function closingGameConfirmation(){ //called from confrim button, used to send y
 }
 
 
-// get game change informations and act upon them
+// get game change information's and act upon them
 // the returned value is 2 dimensional array first one is game id second one is game info 
 function runningGameEvents(){
-	var gameInfoIn = new EventSource("http://rmbrawl.net/php/sendKiviGameStatus.php");
+	var gameInfoIn = new EventSource("../php/sendKiviGameStatus.php");
 	gameInfoIn.onopen = function() {
 		console.log("Listening server sent events"); 
 	}
@@ -395,7 +395,7 @@ function runningGameEvents(){
 				console.log('Reconnecting...');
 				break;
 			case EventSource.CLOSED:
-				console.log('Connection failed,attempitng second reconnect...');
+				console.log('Connection failed,attempting second reconnect...');
 				if (!gameEnded) {
 					runningGameEvents()
 				} else {
@@ -407,26 +407,26 @@ function runningGameEvents(){
 	
 	
 	//do the p1 first move here
-	//p1 is the last one to connect to this stram. no need to check for all player connection (at this point in coding)
+	//p1 is the last one to connect to this stream. no need to check for all player connection (at this point in coding)
 	if (localStorage.getItem("gamePlayerNumber") == 1 && localStorage.getItem("gameTurn") < 17) {
 		$("#yourHand__confirmButton").html("Throw");
 		$("#yourHand__confirmButton").css({"textShadow": "2px 2px #fff"});
-		localStorage.setItem("yourCurrentChoice", 1); //there is no choices at throwing dieces, this can be changed by any button
+		localStorage.setItem("yourCurrentChoice", 1); //there is no choices at throwing dices, this can be changed by any button
 		console.log("first turn and p1")
 		canPost = true
 	}
 	gameInfoIn.addEventListener("status", function(e) {
 		var yourGame = String(localStorage.getItem("gameID"))
 		
-		//console.log("message before convertion: " + e.data)
+		//console.log("message before conversion: " + e.data)
 		var messageIn = JSON.parse(e.data);
-		//console.log("message after convertion: " + messageIn)
+		//console.log("message after conversion: " + messageIn)
 		
 		if(localStorage.getItem("gameTurn") == parseInt(messageIn[yourGame])){
 			//console.log("no change for your game")
 		}else if(localStorage.getItem("gameTurn") < parseInt(messageIn[yourGame])){
 			console.log("game has updated")
-			console.log("Last 6 characterf of the game state " + messageIn["fta" + yourGame]) 
+			console.log("Last 6 characters of the game state " + messageIn["fta" + yourGame]) 
 			//if works can be used to get data this way without using ajax request	
 			var infos = {fta: messageIn["fta" + yourGame], gt: messageIn[yourGame]};
 			
@@ -465,7 +465,7 @@ function runningGameEvents(){
 				closingGameConfirmation()
 				countScore()
 
-			}else{ //procede to continue the game
+			}else{ //proceed to continue the game
 				getGameData(infos)
 			}
 		}else{
@@ -479,7 +479,7 @@ function runningGameEvents(){
 
 
 //<<All in game buttons>>
-//confrim button
+//confirm button
 $(function(){ //remember to not create button effect before document is loaded
 	$("#yourHand__confirmButton").click(function(){
 		console.log("can post: " + canPost)
@@ -503,8 +503,8 @@ $(function(){ //remember to not create button effect before document is loaded
 		}
 		if (placingMarble) {
 			//to prevent miss clicking send without selecting any slots: 
-			//check to see if chooice is 00 and at least one of the slots have a value of 1
-			//if so do nothing. (code at later a warnign message)
+			//check to see if choice is 00 and at least one of the slots have a value of 1
+			//if so do nothing. (code at later a warning message)
 			var canBePlaced = false;
 
 			for (var i = 0; i < 49; i++) {
@@ -548,7 +548,7 @@ $(document).ready(function(){
 	$("#yourHand__dices_AtHand_dice1").click(function(){
 		console.log("dice 1 clicked")
 		if(reRolling){
-			//set the frist number in the string to be 1 if 0 and 0 if 1
+			//set the first number in the string to be 1 if 0 and 0 if 1
 			var currently = localStorage.getItem("yourCurrentChoice");
 			//localStorage.setItem("yourCurrentChoice", "000000");
 			if(currently.slice(0, 1) == "0"){
@@ -566,7 +566,7 @@ $(document).ready(function(){
 	$("#yourHand__dices_AtHand_dice2").click(function(){
 		console.log("dice 2 clicked")
 		if(reRolling){
-			//set the frist number in the string to be 1 if 0 and 0 if 1
+			//set the first number in the string to be 1 if 0 and 0 if 1
 			var currently = localStorage.getItem("yourCurrentChoice");
 			//localStorage.setItem("yourCurrentChoice", "000000");
 			if(currently.slice(1, 2) == "0"){
@@ -584,7 +584,7 @@ $(document).ready(function(){
 	$("#yourHand__dices_AtHand_dice3").click(function(){
 		console.log("dice 3 clicked")
 		if(reRolling){
-			//set the frist number in the string to be 1 if 0 and 0 if 1
+			//set the first number in the string to be 1 if 0 and 0 if 1
 			var currently = localStorage.getItem("yourCurrentChoice");
 			//localStorage.setItem("yourCurrentChoice", "000000");
 			if(currently.slice(2, 3) == "0"){
@@ -602,7 +602,7 @@ $(document).ready(function(){
 	$("#yourHand__dices_AtHand_dice4").click(function(){
 		console.log("dice 4 clicked")
 		if(reRolling){
-			//set the frist number in the string to be 1 if 0 and 0 if 1
+			//set the first number in the string to be 1 if 0 and 0 if 1
 			var currently = localStorage.getItem("yourCurrentChoice");
 			//localStorage.setItem("yourCurrentChoice", "000000");
 			if(currently.slice(3, 4) == "0"){
@@ -620,7 +620,7 @@ $(document).ready(function(){
 	$("#yourHand__dices_AtHand_dice5").click(function(){
 		console.log("dice 5 clicked")
 		if(reRolling){
-			//set the frist number in the string to be 1 if 0 and 0 if 1
+			//set the first number in the string to be 1 if 0 and 0 if 1
 			var currently = localStorage.getItem("yourCurrentChoice");
 			//localStorage.setItem("yourCurrentChoice", "000000");
 			if(currently.slice(4, 5) == "0"){
@@ -638,7 +638,7 @@ $(document).ready(function(){
 	$("#yourHand__dices_AtHand_dice6").click(function(){
 		console.log("dice 6 clicked")
 		if(reRolling){
-			//set the frist number in the string to be 1 if 0 and 0 if 1
+			//set the first number in the string to be 1 if 0 and 0 if 1
 			var currently = localStorage.getItem("yourCurrentChoice");
 			//localStorage.setItem("yourCurrentChoice", "000000");
 			if(currently.slice(5, 6) == "0"){
@@ -657,10 +657,10 @@ $(document).ready(function(){
 
 //<< In game and after game functions >>
 function getGameData(data){ //called after the server sent event sends a new number.
-	//gets back info of the game and excecutes upon ir
-	//this info is alredy has filtered the game id of your game so no need to repeat it.
+	//gets back info of the game and executes upon ir
+	//this info is already has filtered the game id of your game so no need to repeat it.
 	//incoming info includes: gameTurn [gt], firstTurnAll [fta], boardUsedPositions [bup], boardState [bs]
-	//firstTurnAll [fta] is cut in the last meaningfull characters by the server
+	//firstTurnAll [fta] is cut in the last meaningfully characters by the server
 
 	if(data.gt % 16 == 1){ //Result: p1 thew,  action: p1 re throw
 		console.log("p1 throw the dices")
@@ -737,7 +737,7 @@ function getGameData(data){ //called after the server sent event sends a new num
 		if(localStorage.getItem("gamePlayerNumber") == 2){
 			$("#yourHand__confirmButton").html("place");
 			$("#yourHand__confirmButton").css({"textShadow": "2px 2px #fff"});
-			localStorage.setItem("yourCurrentChoice", "00"); //no placment if 00
+			localStorage.setItem("yourCurrentChoice", "00"); //no placement if 00
 			placingMarble = true
 		}
 		
@@ -792,7 +792,7 @@ function getGameData(data){ //called after the server sent event sends a new num
 		if (localStorage.getItem("gamePlayerNumber") == 3) {
 			$("#yourHand__confirmButton").html("place");
 			$("#yourHand__confirmButton").css({ "textShadow": "2px 2px #fff" });
-			localStorage.setItem("yourCurrentChoice", "00"); //no placment if 00
+			localStorage.setItem("yourCurrentChoice", "00"); //no placement if 00
 			placingMarble = true
 		}
 
@@ -846,7 +846,7 @@ function getGameData(data){ //called after the server sent event sends a new num
 		if (localStorage.getItem("gamePlayerNumber") == 4) {
 			$("#yourHand__confirmButton").html("place");
 			$("#yourHand__confirmButton").css({ "textShadow": "2px 2px #fff" });
-			localStorage.setItem("yourCurrentChoice", "00"); //no placment if 00
+			localStorage.setItem("yourCurrentChoice", "00"); //no placement if 00
 			placingMarble = true
 		}
 
@@ -982,8 +982,8 @@ async function setDiceNumber(data){
 function testAllSlots(data){
 	//test all slots
 	//check if a slot already has a marble
-	//check if dices are corect to put amarble in place
-	//chech the dice and used postitions values from localStorage
+	//check if dices are correct to put marble in place
+	//check the dice and used positions values from localStorage
 	//localStorage.getItem("yourCurrentChoice");
 	//localStorage.setItem("yourCurrentChoice", "000000");
 	var dices = [
@@ -995,9 +995,9 @@ function testAllSlots(data){
 		parseInt(data.fta.slice(5, 6))
 	];
 	
-	//all variables taht are used to chech if the dices are a match for a slot
-	//if there is afour of the same it counts as 1 of threes, 1 of twos and 1 of fours
-	//if a slot requres 1*4 and 1*2 do it as 1*4 and 2*2 because the 4 is counted as both pairs and quertlets
+	//all variables that are used to check if the dices are a match for a slot
+	//if there is a four of the same it counts as 1 of threes, 1 of twos and 1 of fours
+	//if a slot requires 1*4 and 1*2 do it as 1*4 and 2*2 because the 4 is counted as both pairs and quartets
 	var ones = 0;
 	var twos = 0;
 	var threes = 0;
@@ -1095,8 +1095,8 @@ function testAllSlots(data){
 		evens = 1;	
 	}
 	
-	//set the cna/can't use value of each slot and highlight the oens taht ccna be used.
-	//the chech to see if can be pressed is in the buttons hemselves and disabling highlights is in the confrim button
+	//set the cna/can't use value of each slot and highlight the ones that can be used.
+	//the check to see if can be pressed is in the buttons themselves and disabling highlights is in the confirm button
 	//state 0 = no matching dices, state 1 = matching dices and sate 2 = marble already placed.
 	
 	var boxShadowCss = "0px 0px 3px 3px #0F0";
@@ -2096,9 +2096,9 @@ function countScore(){
 	console.log("p4 score: " + p4Score)
 
 
-	//count the winner and set a crown besidies their score.
+	//count the winner and set a crown besides their score.
 	//winner is the one with most points.
-	//if two palyer have smae amoujnt of pouints winner is the one hwo hsa more connection point.
+	//if two player have same amount of points winner is the one hwo hsa more connection point.
 	//if both players have same points and same connection points then winner is the one with bigger player number.
 	var p1winner = false;
 	var p2winner = false;
@@ -2113,7 +2113,7 @@ function countScore(){
 	if (p4Score == biggestNumber) {allHighScores.push("p4")}
 
 	if (allHighScores.length > 1) { //if there is a tie
-		//check to see what are the connection points between all palyers
+		//check to see what are the connection points between all players
 		var connectionBonuses = [];
 		if (allHighScores.includes("p1")) { connectionBonuses.push(p1Connection) }
 		if (allHighScores.includes("p2")) { connectionBonuses.push(p2Connection) }

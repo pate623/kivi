@@ -50,13 +50,13 @@
 			}else{
 				$sqlString .= "LIMIT 10 ";	
 			}
-			if($_GET['page'] != 1 && $_GET['page']){ //if ther needs to be an offset
+			if($_GET['page'] != 1 && $_GET['page']){ //if there needs to be an offset
 				$offset = ($_GET['page'] - 1) * $_GET['gamesShown'];
 				$sqlString .= " OFFSET " . $offset;
 			}
 			
 			
-			//do the SQL querry
+			//do the SQL query
 			$numOfShowingGames = 0;
 			$result = mysqli_query($conn, $sqlString);
 			if (mysqli_num_rows($result) > 0) {

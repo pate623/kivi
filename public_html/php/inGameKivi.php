@@ -58,6 +58,6 @@ $aResult2 = array();
 //echo json_encode($aResult2, JSON_FORCE_OBJECT);
 
 /*
- rest of the game plays out in other php scipts.
+ rest of the game plays out in other php scripts.
 */
 ?>

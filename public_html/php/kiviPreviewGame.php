@@ -24,7 +24,7 @@ $wholePage ="";
 
 $wholePage .= '<script>';
 
-//do the javascript variable in here by getting the inforamtion form sql
+//do the javascript variable in here by getting the information form sql
 $result = mysqli_query($conn, $sqlString);
 if (mysqli_num_rows($result) > 0) {
 	while($row = mysqli_fetch_assoc($result)) {

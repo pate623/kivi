@@ -1,5 +1,5 @@
 //cookie consent
-//check if shwoing cookie consent is neccesary
+//check if showing cookie consent is necessary
 $(document).ready(function(){
 	if (typeof(Storage) !== "undefined") {
 		if(localStorage.getItem("consentedToCookies") == "accepted"){
@@ -26,7 +26,7 @@ $(document).ready(function(){
 	severGameInfo = JSON.parse(gameInfoFromServer);
 	
 	if(severGameInfo.gameFound === true){
-		console.log("game loaded succesfully")
+		console.log("game loaded successfully")
 		$("#playersName__player1__name").html(severGameInfo.p1Name);
 		$("#playersName__player2__name").html(severGameInfo.p2Name);
 		
@@ -94,7 +94,7 @@ $(document).ready(function(){
 
 
 
-// << set a backgroung images of slots  >>
+// << set a background images of slots  >>
 //also set a text from 1-10 to specify which slot was used and when
 function placeMarble(data, player, marbleNumber){
 	var placeChoice = data;
@@ -180,8 +180,6 @@ function fillTheSlots(placedMarbles){
 			placeMarble(choicesP4[i], 4, i+1)
 		}
 	}
-	
-	
 }
 
 

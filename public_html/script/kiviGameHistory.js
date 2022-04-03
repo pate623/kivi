@@ -5,7 +5,7 @@ var getHeaderData = { pAmount:"all", gamesShown: 10, orderedBy:"TimeDescending",
 var maxpage = 1;
 
 
-//set to 0 if there isnt enough pages to show
+//set to 0 if there isn't enough pages to show
 var firstNumVal = 1;
 var secondNumVal = 2;
 var thirdNumVal = 3;
@@ -13,7 +13,7 @@ var fourthNumVal = 4;
 var fifthNumVal = 5;
 
 //cookie consent
-//check if shwoing cookie consent is neccesary
+//check if showing cookie consent is necessary
 $(document).ready(function(){
 	if (typeof(Storage) !== "undefined") {
 		if(localStorage.getItem("consentedToCookies") == "accepted"){
@@ -146,7 +146,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	//number selcetion for the pages
+	//number selection for the pages
 	$(".pages__pagesTotal__availablePageNumber__firstNumber").click(function(){
 		if(getHeaderData.page != firstNumVal && firstNumVal){
 			console.log("first number clicked")
@@ -292,7 +292,7 @@ function getPageInfo(){
 	
 	for(var i = 0; i < data["numOfShowingGames"] ; i++){
 		
-		//Add relative link fronm this script to the kiviPreviewGame.php file
+		//Add relative link from this script to the kiviPreviewGame.php file
 		var relativeKiviPreviewLink = window.location.href + "kiviPreviewGame.php?ID=";
 		relativeKiviPreviewLink = relativeKiviPreviewLink.replace("gameHistory", "kiviPreviewGame");
 		// '<a href="http://rmbrawl.net/kiviPreviewGame.php?ID='
@@ -312,7 +312,7 @@ function getPageInfo(){
 		
 		toBeappended += '<div class="shownGames__game__nameAndScore"';
 		
-		//add the maring left if needed
+		//add the margin left if needed
 		if (data["game"][i]["playerCount"] == 2){
 			toBeappended += 'style=" margin-left: 25vw; width: 70vw;"';
 		}else if (data["game"][i]["playerCount"] == 3){
@@ -402,7 +402,7 @@ function getPageInfo(){
 			fourthNumVal = parseInt(data["yourSettings"]["page"]) + 1;
 			fifthNumVal = parseInt(data["yourSettings"]["page"]) + 2;	
 		}else{//if the middle page has to be either fourth or fifth number
-			if( data["yourSettings"]["page"] == maxpage){ //if the current page shoudl be the last
+			if( data["yourSettings"]["page"] == maxpage){ //if the current page should be the last
 				firstNumVal = parseInt(data["yourSettings"]["page"]) - 3;
 				secondNumVal = parseInt(data["yourSettings"]["page"]) - 2;
 				thirdNumVal = parseInt(data["yourSettings"]["page"]) - 1;
@@ -453,7 +453,7 @@ function getPageInfo(){
 	
 	
 	//if the value is 0 set the text color to #666
-	//if this is the curen page set text to #818
+	//if this is the current page set text to #818
 	//else set the text to #f8f
 	if(firstNumVal == getHeaderData.page){
 		$(".pages__pagesTotal__availablePageNumber__firstNumber").css({"color" : "#818"});
@@ -493,7 +493,7 @@ function getPageInfo(){
 };
 
 function redirectWithGet(){
-	//use get header data to determine what the whole adress should be 
+	//use get header data to determine what the whole address should be 
 	//getHeaderData
 	var headerInfo ="gamesShown=" + getHeaderData.gamesShown + "&orderedBy=" + getHeaderData.orderedBy + "&pAmount=" + getHeaderData.pAmount + "&page=" + getHeaderData.page;
 	

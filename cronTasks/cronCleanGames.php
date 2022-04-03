@@ -2,7 +2,7 @@
 /*
  This file is for cron
  it's job is to clean inactive users from the "kivi" queue
- The cron is schedueld to run this scipt once a minute.
+ The cron is scheduled to run this script once a minute.
  
  This file will loop twice per minute.
 */
@@ -59,11 +59,11 @@ $all1scoreSlots = array("a1", "a4", "a7", "b3", "b5", "c1", "c7", "d2", "d6", "e
 		$sqlRemoveRg .= "DELETE FROM kiviRunningGames WHERE gameID=" . $removable .";";
 	}
 	
-	//eiter move to finsihed and count score or move to unfinished without counting score
-	//check if game is finsihed with gameTurn (168t for 2p, 172t for 3p and 176t for 4p)
+	//either move to finished and count score or move to unfinished without counting score
+	//check if game is finished with gameTurn (168t for 2p, 172t for 3p and 176t for 4p)
 	$moving = mysqli_query($conn, $selectKiviRemovable);
 	if (mysqli_num_rows($moving) > 0) {
-		while($row = mysqli_fetch_assoc($moving)) { //creat the transform querries
+		while($row = mysqli_fetch_assoc($moving)) { //create the transform queries
 			if( ($row["gameTurn"] == 168 && $row["playerCount"] == 2) || ($row["gameTurn"] == 172 && $row["playerCount"] == 3) || ($row["gameTurn"] == 176 && $row["playerCount"] == 4) ){
 				//count score
 				//uses a similar code as the client side does
@@ -704,7 +704,7 @@ $all1scoreSlots = array("a1", "a4", "a7", "b3", "b5", "c1", "c7", "d2", "d6", "e
 		}
 	}
 	
-	//need all the SQL in once piece because for some reason it can't be done seperately.
+	//need all the SQL in once piece because for some reason it can't be done separately.
 	$bigSQL = $sqlQuery . $movedToFinished . $updateTotalAmounts . $sqlRemoveKivi . $sqlRemoveRg;
 	
 	$allAtOnce = mysqli_multi_query($conn, $bigSQL);

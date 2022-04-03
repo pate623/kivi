@@ -2,7 +2,7 @@
 /*
  This file is for cron
  it's job iis to clean inactive users from the "kivi" queue
- The cron is schedueld to run this script once a minute.
+ The cron is scheduled to run this script once a minute.
  
  This file will loop 60 times per minute.
 */

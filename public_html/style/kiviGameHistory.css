@@ -6,7 +6,7 @@ body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote {
 }
 
 
-/* player colours */
+/* player colors */
 span.p1Color {
 	color:#00f;
 }
@@ -120,7 +120,7 @@ option{
 input{
 }
 
-/* remove browser defalut valus */
+/* remove browser default values */
 fieldset {
     display: block;
     margin-inline-start: 0.5vw;
@@ -182,7 +182,7 @@ label for{
 	font-weight:bold;
 }
 
-/*sizes and posotions */
+/*sizes and positions */
 a{
 	text-decoration: none;
 }

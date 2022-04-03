@@ -24,8 +24,8 @@ $aResult['filteredPassword'] = $userSettings["password"];
 $aResult['filteredQueueue'] = $userSettings["queue"];
 
 /*
-  First ckeck if ther is a match for the player.
-   an other 1-3 players alredy waiting (based on queue)
+  First check if there is a match for the player.
+   an other 1-3 players already waiting (based on queue)
 	If so crete a game for all the players into the "kivi" table 
 	Add the player with the "transferredGameID" and "playerNumber" into the "kiviQueue" 
 	Update the other 1-3 users "transferredGameID" and "playerNumber" status
@@ -92,7 +92,7 @@ if (!$conn) {
 		$aResult['user2Password'] = $matchableUsersPassword[1];
 		
 		$createdGame = strval($createGame);
-		$aResult['createdGame'] = $createdGame; //check to see if the SQL insertion statment is correct
+		$aResult['createdGame'] = $createdGame; //check to see if the SQL insertion statement is correct
 		
 		if(mysqli_query($conn, $createdGame)){
 			$aResult['gameCreated'] = "New game created";
@@ -135,7 +135,7 @@ if (!$conn) {
 		if (mysqli_query($conn, $resultString)) { //puts user in the queue
 			$aResult['connection'] = "Data inserted into the table";
 			$aResult['errors'] = false;
-			// get the users queue ID (used bu user to poll the server for a qeueu status)
+			// get the users queue ID (used bu user to poll the server for a queue status)
 			$aResult['queueID'] = mysqli_insert_id($conn);
 		}else{
 			$aResult['sqlInsertion'] = "Connected to SQL server, but no data inserted";
