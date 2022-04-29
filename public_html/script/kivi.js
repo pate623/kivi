@@ -169,7 +169,7 @@ function queues(){
 		method: 'POST', 
 		enctype: 'application/x-www-form-urlencoded',
         processData: false,
-		url: '../php/kiviQueue.php',
+		url: '../public_html/php/kiviQueue.php',
 		data: queueRequest,
 		dataType: 'json',
 		success: function (aResult) { 
@@ -219,7 +219,7 @@ function checkQueue(){
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: '../php/inQueueKivi.php',
+		url: '../public_html/php/inQueueKivi.php',
 		data: queueCheck,
 		dataType: 'json',
 		success: function(data){
@@ -264,7 +264,7 @@ function enteringGame(){
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: '../php/inGameKivi.php',
+		url: '../public_html/php/inGameKivi.php',
 		data: startGame,
 		dataType: 'json',
 		success: function(data){
@@ -331,7 +331,7 @@ function sendYourChoice(){ //called from confirm button, used to send your choic
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: '../php/gameActions.php',
+		url: '../public_html/php/gameActions.php',
 		data: yourChoiceOfAction,
 		dataType: 'json',
 		success: function(data){
@@ -361,7 +361,7 @@ function closingGameConfirmation(){ //called from confirm button, used to send y
 		type: 'POST',
 		enctype: 'application/x-www-form-urlencoded',
 		processData: false,
-		url: '../php/reportFinished.php',
+		url: '../public_html/php/reportFinished.php',
 		data: yourChoiceOfAction,
 		dataType: 'json',
 		success: function(data){

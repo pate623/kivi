@@ -17,7 +17,7 @@
 			$sqlString = "SELECT ID, startTime, endTime, playerCount, p1Name, p2Name, p3Name, p4Name, p1Score, p2Score, p3Score, p4Score, winner, highScore  FROM kiviFinishedCorrectly ";
 			
 			$results = array();
-			//chech what setting user sent
+			//check what setting user sent
 			//pAmount: "all", gamesShown: 25, orderedBy: "TimeDescending", page: 1
 			
 			//determine which game types will be searched for

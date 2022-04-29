@@ -390,7 +390,7 @@ function getPageInfo(){
 	$(".pages__gamesTotal__shownGamesNumbers").html(gamesShown);
 	
 	
-	//change he numbers in page list to math the search
+	//change the numbers in page list to math the search
 	
 	console.log("maxpage" + maxpage)
 	
@@ -495,7 +495,7 @@ function getPageInfo(){
 function redirectWithGet(){
 	//use get header data to determine what the whole address should be 
 	//getHeaderData
-	var headerInfo ="gamesShown=" + getHeaderData.gamesShown + "&orderedBy=" + getHeaderData.orderedBy + "&pAmount=" + getHeaderData.pAmount + "&page=" + getHeaderData.page;
+	var headerInfo ="public_html/gamesShown=" + getHeaderData.gamesShown + "&orderedBy=" + getHeaderData.orderedBy + "&pAmount=" + getHeaderData.pAmount + "&page=" + getHeaderData.page;
 	
 	//Prevent header info stacking
 	var cleanedHeader = window.location.href;
