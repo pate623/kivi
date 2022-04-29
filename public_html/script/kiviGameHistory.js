@@ -495,7 +495,7 @@ function getPageInfo(){
 function redirectWithGet(){
 	//use get header data to determine what the whole address should be 
 	//getHeaderData
-	var headerInfo ="public_html/gamesShown=" + getHeaderData.gamesShown + "&orderedBy=" + getHeaderData.orderedBy + "&pAmount=" + getHeaderData.pAmount + "&page=" + getHeaderData.page;
+	var headerInfo ="?gamesShown=" + getHeaderData.gamesShown + "&orderedBy=" + getHeaderData.orderedBy + "&pAmount=" + getHeaderData.pAmount + "&page=" + getHeaderData.page;
 	
 	//Prevent header info stacking
 	var cleanedHeader = window.location.href;

@@ -321,7 +321,7 @@ function enteringGame(){
 //<<<End of queue>>>
 
 
-// <<game acions>>
+// <<game actions>>
 function sendYourChoice(){ //called from confirm button, used to send your choices into the server
 	//uses web storage to figure out the choice user has made
 	var jsonObject = {data: localStorage.getItem("yourCurrentChoice"), ID: localStorage.getItem("gameID"), user:localStorage.getItem("gamePlayerNumber"), password:localStorage.getItem("kiviPassword")}
