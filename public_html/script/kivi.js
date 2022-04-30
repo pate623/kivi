@@ -378,7 +378,7 @@ function closingGameConfirmation(){ //called from confirm button, used to send y
 // get game change information's and act upon them
 // the returned value is 2 dimensional array first one is game id second one is game info 
 function runningGameEvents(){
-	var gameInfoIn = new EventSource("../php/sendKiviGameStatus.php");
+	var gameInfoIn = new EventSource("../public_html/php/sendKiviGameStatus.php");
 	gameInfoIn.onopen = function() {
 		console.log("Listening server sent events"); 
 	}
