@@ -18,8 +18,7 @@ And to get this game working on your system:
 5. Add cron task "cronTasks/cronCleanQueue.php", make it run once a minute.
 6. Add servername, username and password for all(14) PHP files. <br>
 These PHP files can be found from "cronTasks"(2), "public_html"(2), and "public_html\php"(10).<br>
-These passwords can only seen by the server and are used to edit data in the SQL database. <br>
-You can create new user accounts using phpMyAdmin.
+These passwords can only be seen by the server and are used to edit data in the SQL database. <br>
 
 ---
 
