@@ -426,7 +426,7 @@ function runningGameEvents(){
 			//console.log("no change for your game")
 		}else if(localStorage.getItem("gameTurn") < parseInt(messageIn[yourGame])){
 			console.log("game has updated")
-			console.log("Last 6 characters of the game state " + messageIn["fta" + yourGame]) 
+			console.log("Last 6 characters of the game state " + messageIn["fta" + yourGame])
 			//if works can be used to get data this way without using ajax request	
 			var infos = {fta: messageIn["fta" + yourGame], gt: messageIn[yourGame]};
 			
@@ -1515,7 +1515,7 @@ function placeMarble(data, player){
 		color = "greenMarble";
 	}
 	
-	$("#"+ placeChoice + "-slot").css("background-image",  "url(../public_html/pictures/kivi/marbles/" + color + ".svg), url(../pictures/kivi/board/" + placeChoice + ".svg)");
+	$("#"+ placeChoice + "-slot").css("background-image",  "url(../public_html/pictures/kivi/marbles/" + color + ".svg), url(../public_html/pictures/kivi/board/" + placeChoice + ".svg)");
 	
 	localStorage.setItem("slot-" + placeChoice + "-state", 2);
 }
@@ -1558,7 +1558,7 @@ function hidemarbleFromHand(){
 	}else if( $("#yourHand__marbles__marble1").css('visibility') == 'visible' ){
 		$("#yourHand__marbles__marble1").css({"visibility": "hidden"});
 	}
-}			
+}
 
 function countScore(){
 	var p1Score =0;
@@ -2221,11 +2221,4 @@ function playerColorBackground(p){
 	}else if(p == 4){
 		$("#playersName__player4__name").css({"text-shadow": "-2px -2px 2px #fff, 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff"});
 	}
-	
 }
-
-
-
-
-
-
