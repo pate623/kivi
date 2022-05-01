@@ -284,15 +284,15 @@ function enteringGame(){
 					$("#playersName__player3__name").html(data.p3Name);
 					localStorage.setItem("Player3Name", data.p3Name);
 				}
-				//set  your dice color 
+				//set your dice color
 				if(localStorage.getItem("gamePlayerNumber") == 1){
-					$(".yourHand__marbles__aMarble").css("background-image",  "url(../pictures/kivi/marbles/blueMarble.svg)");
+					$(".yourHand__marbles__aMarble").css("background-image",  "url(../public_html/pictures/kivi/marbles/blueMarble.svg)");
 				}else if(localStorage.getItem("gamePlayerNumber") == 2){
-					$(".yourHand__marbles__aMarble").css("background-image",  "url(../pictures/kivi/marbles/redMarble.svg)")	
+					$(".yourHand__marbles__aMarble").css("background-image",  "url(../public_html/pictures/kivi/marbles/redMarble.svg)")	
 				}else if(localStorage.getItem("gamePlayerNumber") == 3){
-					$(".yourHand__marbles__aMarble").css("background-image",  "url(../pictures/kivi/marbles/yellowMarble.svg)")	
+					$(".yourHand__marbles__aMarble").css("background-image",  "url(../public_html/pictures/kivi/marbles/yellowMarble.svg)")	
 				}else if(localStorage.getItem("gamePlayerNumber") == 4){
-					$(".yourHand__marbles__aMarble").css("background-image",  "url(../pictures/kivi/marbles/greenMarble.svg)")	
+					$(".yourHand__marbles__aMarble").css("background-image",  "url(../public_html/pictures/kivi/marbles/greenMarble.svg)")	
 				}
 				
 				//start the game after successfully connection and refresh your activity once in a 5 seconds
@@ -515,7 +515,7 @@ $(function(){ //remember to not create button effect before document is loaded
 			if (canBePlaced && localStorage.getItem("yourCurrentChoice") == 0 ) {
 				//not placed any marbles even though there is available place for a marble.
 				//create a pop uop to inform about this
-				console.log("There is a place for a marble but no marble is palced, please put a marble on the board.")
+				console.log("There is a place for a marble but no marble is placed, please put a marble on the board.")
 			} else {
 				placingMarble = false;
 				$("#yourHand__confirmButton").css({ "textShadow": "0px 0px " });
@@ -1095,7 +1095,7 @@ function testAllSlots(data){
 		evens = 1;	
 	}
 	
-	//set the cna/can't use value of each slot and highlight the ones that can be used.
+	//set the can/can't use value of each slot and highlight the ones that can be used.
 	//the check to see if can be pressed is in the buttons themselves and disabling highlights is in the confirm button
 	//state 0 = no matching dices, state 1 = matching dices and sate 2 = marble already placed.
 	
