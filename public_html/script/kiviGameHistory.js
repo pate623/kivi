@@ -293,9 +293,10 @@ function getPageInfo(){
 	for(var i = 0; i < data["numOfShowingGames"] ; i++){
 		
 		//Add relative link from this script to the kiviPreviewGame.php file
-		var relativeKiviPreviewLink = window.location.href.substring(0 , toString(window.location.href).indexOf("?"));
+		var relativeKiviPreviewLink = window.location.href.substring(0 , window.location.href.indexOf("?"));
 		relativeKiviPreviewLink += "?ID=";
-		relativeKiviPreviewLink = relativeKiviPreviewLink.replace("gameHistory", "kiviPreviewGame");
+		let auxiliary = relativeKiviPreviewLink.replace("gameHistory", "kiviPreviewGame");
+		relativeKiviPreviewLink = auxiliary;
 		// '<a href="http://rmbrawl.net/kiviPreviewGame.php?ID='
 		
 		var toBeappended = '<a href=';
