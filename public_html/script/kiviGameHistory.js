@@ -293,7 +293,12 @@ function getPageInfo(){
 	for(var i = 0; i < data["numOfShowingGames"] ; i++){
 		
 		//Add relative link from this script to the kiviPreviewGame.php file
-		var relativeKiviPreviewLink = window.location.href.substring(0 , window.location.href.indexOf("?"));
+		var relativeKiviPreviewLink = "";
+		if( window.location.href.includes("?")){
+			relativeKiviPreviewLink = window.location.href.substring(0 , window.location.href.indexOf("?"));
+		}else{
+			relativeKiviPreviewLink = window.location.href;
+		}
 		relativeKiviPreviewLink += "?ID=";
 		let auxiliary = relativeKiviPreviewLink.replace("gameHistory", "kiviPreviewGame");
 		relativeKiviPreviewLink = auxiliary;
