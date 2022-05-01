@@ -1515,7 +1515,7 @@ function placeMarble(data, player){
 		color = "greenMarble";
 	}
 	
-	$("#"+ placeChoice + "-slot").css("background-image",  "url(../pictures/kivi/marbles/" + color + ".svg), url(../pictures/kivi/board/" + placeChoice + ".svg)");
+	$("#"+ placeChoice + "-slot").css("background-image",  "url(../public_html/pictures/kivi/marbles/" + color + ".svg), url(../pictures/kivi/board/" + placeChoice + ".svg)");
 	
 	localStorage.setItem("slot-" + placeChoice + "-state", 2);
 }
@@ -1530,10 +1530,10 @@ function removeHighlights(){
 function highlightCurrentChoice(picked){
 	for(var i = 0; i < 49; i++){
 		if(localStorage.getItem("slot-" + allSlots[i] +"-state") != 2){
-			$("#" + allSlots[i] + "-slot").css("background-image", "url(../pictures/kivi/board/" + allSlots[i] + ".svg)");
+			$("#" + allSlots[i] + "-slot").css("background-image", "url(../public_html/pictures/kivi/board/" + allSlots[i] + ".svg)");
 		}	
 	}
-	$("#" + picked + "-slot").css("background-image", " url(../pictures/kivi/marbles/placing.svg), url(../pictures/kivi/board/" + picked + ".svg)");
+	$("#" + picked + "-slot").css("background-image", " url(../public_html/pictures/kivi/marbles/placing.svg), url(../public_html/pictures/kivi/board/" + picked + ".svg)");
 }
 
 function hidemarbleFromHand(){
@@ -2188,19 +2188,19 @@ function countScore(){
 
 	if (p1winner) {
 		console.log("p1 won the game.")
-		$("#p1NameEnd").css({ "background-image": "url(../pictures/kivi/medal/medal.png)" });
+		$("#p1NameEnd").css({ "background-image": "url(../public_html/pictures/kivi/medal/medal.png)" });
 	}
 	if (p2winner) {
 		console.log("p2 won the game.")
-		$("#p2NameEnd").css({ "background-image": "url(../pictures/kivi/medal/medal.png)" });
+		$("#p2NameEnd").css({ "background-image": "url(../public_html/pictures/kivi/medal/medal.png)" });
 	}
 	if (p3winner) {
 		console.log("p3 won the game.")
-		$("#p3NameEnd").css({ "background-image": "url(../pictures/kivi/medal/medal.png)" });
+		$("#p3NameEnd").css({ "background-image": "url(../public_html/pictures/kivi/medal/medal.png)" });
 	}
 	if (p4winner) {
 		console.log("p4 won the game.")
-		$("#p4NameEnd").css({ "background-image": "url(../pictures/kivi/medal/medal.png)" });
+		$("#p4NameEnd").css({ "background-image": "url(../public_html/pictures/kivi/medal/medal.png)" });
 	}
 	
 }
