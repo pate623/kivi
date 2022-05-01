@@ -293,14 +293,14 @@ function getPageInfo(){
 	for(var i = 0; i < data["numOfShowingGames"] ; i++){
 		
 		//Add relative link from this script to the kiviPreviewGame.php file
-		var relativeKiviPreviewLink = window.location.href + "kiviPreviewGame.php?ID=";
+		var relativeKiviPreviewLink = window.location.href + "?ID=";
 		relativeKiviPreviewLink = relativeKiviPreviewLink.replace("gameHistory", "kiviPreviewGame");
 		// '<a href="http://rmbrawl.net/kiviPreviewGame.php?ID='
 		
-		var toBeappended = "";
+		var toBeappended = '<a href=';
 		toBeappended += relativeKiviPreviewLink;
 		toBeappended += String(data["game"][i]["ID"]); //link to the game	<<< !! still testing !! >>>
-		toBeappended += '" target="_blank">';
+		toBeappended += ' target="_blank">';
 		toBeappended += '<div class="shownGames__game">';
 		toBeappended += '<div class="shownGames__game__time">';
 		toBeappended += data["game"][i]["startTime"]; // add the day

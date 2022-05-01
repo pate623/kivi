@@ -48,19 +48,19 @@ $(document).ready(function(){
 	
 		var p1Medal ="";
 		if(severGameInfo.winner == 1){
-			p1Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
+			p1Medal =' style="background-image: url(../public_html/pictures/kivi/medal/medal.png)"';
 		}
 		var p2Medal ="";
 		if(severGameInfo.winner == 2){
-			p2Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
+			p2Medal =' style="background-image: url(../public_html/pictures/kivi/medal/medal.png)"';
 		}
 		var p3Medal ="";
 		if(severGameInfo.winner == 3){
-			p3Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
+			p3Medal =' style="background-image: url(../public_html/pictures/kivi/medal/medal.png)"';
 		}
 		var p4Medal ="";
 		if(severGameInfo.winner == 4){
-			p4Medal =' style="background-image: url(../pictures/kivi/medal/medal.png)"';
+			p4Medal =' style="background-image: url(../public_html/pictures/kivi/medal/medal.png)"';
 		}
 		
 		$("#postGameInfo").html("")
@@ -112,7 +112,7 @@ function placeMarble(data, player, marbleNumber){
 		color = "greenMarble";
 	}
 	
-	$("#"+ placeChoice + "-slot").css("background-image",  "url(../pictures/kivi/marbles/" + color + ".svg), url(../pictures/kivi/board/" + placeChoice + ".svg)");
+	$("#"+ placeChoice + "-slot").css("background-image",  "url(../public_html/pictures/kivi/marbles/" + color + ".svg), url(../public_html/pictures/kivi/board/" + placeChoice + ".svg)");
 	$("#"+ placeChoice + "-slot").append(String(marbleNumber));
 }
 
